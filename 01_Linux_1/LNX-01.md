@@ -3,6 +3,7 @@ Opzetten van een VM met een Ubuntu/CentOS. Ondek in de virtuele machine wat je g
 
 ## Keyterms
 
+
 ## Opdracht
 ### Gebruikte bronnen
 
