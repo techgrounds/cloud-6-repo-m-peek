@@ -17,4 +17,4 @@ Document niet goed lezen en vergeten de virtuele installatie disc te installeren
 
 ### Resultaat
 VM opgezet in virtual box. Command whoami uitgevoerd. 
-![whoami](C:\Users\mylen\Documents\GitHub\cloud-6-repo-m-peek\00_includes\whoami.png)
+![whoami](../00_includes/whoami.png)
