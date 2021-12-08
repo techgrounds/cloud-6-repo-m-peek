@@ -13,7 +13,9 @@ Maak een nieuwe user aan in je VM
 Localiseer de bestanden die users, wachtwoorden, en groepen bijhouden. Kijk of daar een of je je nieuwe user kan vinden. 
 
 ### Gebruikte bronnen
-
+useradd - 
+groupadd -
+/etc/passwd -
 
 ### Ervaren problemen
 
