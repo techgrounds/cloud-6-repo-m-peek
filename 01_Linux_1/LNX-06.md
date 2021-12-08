@@ -21,5 +21,8 @@ chown - Verander de ownership van files of directories
 
 
 ### Resultaat
-
+- twee groepen aanmaken 
+- user aanmaken 
+- users aan groep toevoegen
+-
 
