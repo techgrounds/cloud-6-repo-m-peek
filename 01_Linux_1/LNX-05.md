@@ -1,9 +1,10 @@
 # Users and groups
-Linux maakt gebruik van verschillende gebruikers. 
+Linux maakt gebruik van verschillende gebruikers. De gebruikers zijn in groepen in te delen. 
 
 ## Keyterms
-Root -  <br/>
-Permissions - 
+Root - Root user mag alles doen.  <br/>
+Sudo - command om tijdelijke root permissons te krijgen. 
+
 
 ## Opdracht
 Maak een nieuwe user aan in je VM

@@ -22,5 +22,4 @@ https://tldp.org/LDP/abs/html/textproc.html
 ### Resultaat
 Door middel van gebruik van regular expressions text in bestand toegevoegd en specifieke zin naar ander bestand overgezet. 
 
-Zie printscreen. 
 ![working-text](https://user-images.githubusercontent.com/92883069/145215890-ab0347ea-658e-4096-9567-7f52b4557479.png)
