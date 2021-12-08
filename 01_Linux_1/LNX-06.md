@@ -13,7 +13,9 @@ Permissons -
 - Verander het ownership van de file naar een andere groep. 
 
 ### Gebruikte bronnen
-
+chmod -
+chown - 
+chgroup - 
 
 ### Ervaren problemen
 
