@@ -24,3 +24,4 @@ Commands echo >> file.txt
 Command grep 
 
 Zie printscreen. 
+![working-text](https://user-images.githubusercontent.com/92883069/145215890-ab0347ea-658e-4096-9567-7f52b4557479.png)
