@@ -4,7 +4,7 @@ Linux maakt gebruik van verschillende gebruikers. De gebruikers zijn in groepen 
 ## Keyterms
 Root - Root user mag alles doen.  <br/>
 Sudo - command om tijdelijke root permissons te krijgen. <br/>
-Wheel - Users in de wheel groep krijgen automatisch sudo privileges. 
+Wheel - Users in de wheel groep krijgen automatisch sudo privileges (CentOS). 
 
 ## Opdracht
 Maak een nieuwe user aan in je VM
