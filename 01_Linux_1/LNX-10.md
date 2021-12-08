@@ -12,6 +12,7 @@ PATH variable - systeem variabele die de OS gebruikt om nodige locaties te vinde
 - Maak eenscript dat een httpd package installeerd, activeerd en de httpd mogelijk maakt. Het script moet de httpd status in de terminal printen. 
 
 ### Gebruikte bronnen
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-8
 
 
 ### Ervaren problemen

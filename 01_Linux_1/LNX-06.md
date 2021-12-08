@@ -3,9 +3,8 @@ Verander de toegangen van een bestand.
 
 ## Keyterms
 Permissons - Toestemmingen <br/>
-chmod -
-chown - 
-chgroup - 
+chmod - Verander file of directory permissies <br/>
+chown - Verander de ownership van files of directories 
 
 ## Opdracht
 - Maak een text bestand. 
