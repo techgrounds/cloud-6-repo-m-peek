@@ -2,7 +2,10 @@
 Verander de toegangen van een bestand. 
 
 ## Keyterms
-Permissons - 
+Permissons - Toestemmingen <br/>
+chmod -
+chown - 
+chgroup - 
 
 ## Opdracht
 - Maak een text bestand. 
@@ -13,9 +16,7 @@ Permissons -
 - Verander het ownership van de file naar een andere groep. 
 
 ### Gebruikte bronnen
-chmod -
-chown - 
-chgroup - 
+
 
 ### Ervaren problemen
 

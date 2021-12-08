@@ -17,4 +17,4 @@ Document niet goed lezen en vergeten de virtuele installatie disc te installeren
 
 ### Resultaat
 VM opgezet in virtual box. Command whoami uitgevoerd. 
-![whoami](https://user-images.githubusercontent.com/92883069/145085563-e92aa78e-b0aa-4228-9f0a-9f4b552b4be5.png)
+![whoami]

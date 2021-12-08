@@ -13,9 +13,10 @@ PATH variable - systeem variabele die de OS gebruikt om nodige locaties te vinde
 
 ### Gebruikte bronnen
 
+
 ### Ervaren problemen
 
 
 ### Resultaat
 mkdir scripts
-mv script.sh
+

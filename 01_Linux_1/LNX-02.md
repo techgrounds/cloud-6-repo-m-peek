@@ -17,4 +17,4 @@ Geen ervaren problemen.
 
 ### Resultaat
 Nieuwe directory aangemaakt met een textbestand met tekst. 
-![files-directories](https://user-images.githubusercontent.com/92883069/145095519-cfff4605-81a9-4162-9c0a-da67b73ab591.png)
+![files-directories]
