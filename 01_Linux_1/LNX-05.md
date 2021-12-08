@@ -14,19 +14,14 @@ Maak een nieuwe user aan in je VM
 Localiseer de bestanden die users, wachtwoorden, en groepen bijhouden. Kijk of daar een of je je nieuwe user kan vinden. 
 
 ### Gebruikte bronnen
-https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/
-https://devconnected.com/how-to-list-users-and-groups-on-linux/#a_List_Usernames_using_cut
-https://phoenixnap.com/kb/how-to-create-add-sudo-user-centos
+https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/ <br/>
+https://devconnected.com/how-to-list-users-and-groups-on-linux/#a_List_Usernames_using_cut <br/>
+https://phoenixnap.com/kb/how-to-create-add-sudo-user-centos <br/>
 
 ### Ervaren problemen
 Wachtwoord moest met ander command toegevoegd worden. 
 
 ### Resultaat
-useradd (user)
-groupadd (group)
-usermod -g (group)(user)
-/etc/passwd 
-
 Via adduser een nieuwe user toegevoegd, deze een wachtwoord gegeven en door middel van gebruik van cat /etc/passwd de bestanden van de user opgezocht.
 ![add-user](../00_includes/add-user.png)
 
