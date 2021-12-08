@@ -16,6 +16,7 @@ Localiseer de bestanden die users, wachtwoorden, en groepen bijhouden. Kijk of d
 ### Gebruikte bronnen
 https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/
 https://devconnected.com/how-to-list-users-and-groups-on-linux/#a_List_Usernames_using_cut
+https://phoenixnap.com/kb/how-to-create-add-sudo-user-centos
 
 ### Ervaren problemen
 Wachtwoord moest met ander command toegevoegd worden. 
