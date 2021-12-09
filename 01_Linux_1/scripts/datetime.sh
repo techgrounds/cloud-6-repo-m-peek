@@ -1,4 +1,4 @@
-#Write current time and date in a file in home directory
+#!/bin/bash
 
-date "+%d/%m/%y %H/%M/%S" >> datetime.txt
-#print date/time in textfile
+date "+%d/%m/%y %H/%M/%S" >> /home/mylenepeek/datetime
+#print date/time in file om home directory
