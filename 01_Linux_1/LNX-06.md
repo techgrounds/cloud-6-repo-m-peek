@@ -3,6 +3,7 @@ Verander de toegangen van een bestand.
 
 ## Keyterms
 Permissons - Toestemmingen <br/>
+Ownership - Eigenaar van bestand/file <br/>
 chmod - Verander file of directory permissies <br/>
 chown - Verander de ownership van files of directories 
 
@@ -15,14 +16,13 @@ chown - Verander de ownership van files of directories
 - Verander het ownership van de file naar een andere groep. 
 
 ### Gebruikte bronnen
+https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/
 
 
 ### Ervaren problemen
 
 
 ### Resultaat
-- twee groepen aanmaken 
-- user aanmaken 
-- users aan groep toevoegen
--
+In eerste instantie twee nieuwe groepen toegevoegd en een extra user zonder sudo rechten. Users in groepen geplaatst, nieuw textbestand aangemaakt, bestand uitvoerbaar gemaakt door execute permissions toe te voegen. 
+
 

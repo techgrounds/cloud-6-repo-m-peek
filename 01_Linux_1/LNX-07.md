@@ -6,7 +6,8 @@ Process - Het uitvoeren van code <br/>
 Deamons - Draait op de achtergrond en is niet interactief. <br/>
 Services - Reageert op vraag van programma's kan interactief zijn<br/>
 Programs - Wordt gedraaid door de gebruiker. <br/>
-Ssh - Secure shell. 
+Ssh - Secure shell. <br/>
+PID - Bestand met het proces indentificatie nummer. 
 
 ## Opdracht
 - Start ssh daemon.
@@ -21,4 +22,7 @@ Ssh - Secure shell.
 
 
 ### Resultaat
+sshd - open SSH daemon.
+cat /var/run/sshd/pd - find pid 
+vmstat - check stats vm
 
