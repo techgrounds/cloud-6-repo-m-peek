@@ -19,5 +19,5 @@ PATH variable - systeem variabele die de OS gebruikt om nodige locaties te vinde
 
 ### Resultaat
 mkdir scripts
-![httpd.sh] (scripts\httpd.sh)
+
 
