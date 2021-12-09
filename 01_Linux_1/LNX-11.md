@@ -18,8 +18,7 @@ Cronjobs - Maakt een job aan op een herhalend schema.
 
 
 ### Resultaat
-Script datetime gemaakt. 
-
-script discspace gemaakt. 
+Script datetime en discspace gemaakt, de scripts in een aparte directory gezet en execution permissions gegeven. <br/>
+Cronjobs aangemaakt 
 
 
