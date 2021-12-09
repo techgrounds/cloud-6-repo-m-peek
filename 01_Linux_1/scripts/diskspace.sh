@@ -1,5 +1,5 @@
-#Writes availible disc space to log file '/var/logs'
+#!/bin/bash
 
-df >> /var/logs/discspace
-#writes used discspace in the terminal. 
-#use logrotate. 
+df -h | grep root >> /var/logs/discspace
+#writes used discspace var/logs/discspace
+#use logrotate for script. 

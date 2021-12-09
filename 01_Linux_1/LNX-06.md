@@ -25,4 +25,3 @@ https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/
 ### Resultaat
 In eerste instantie twee nieuwe groepen toegevoegd en een extra user zonder sudo rechten. Users in groepen geplaatst, nieuw textbestand aangemaakt, bestand uitvoerbaar gemaakt door execute permissions toe te voegen. 
 
-

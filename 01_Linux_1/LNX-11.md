@@ -13,9 +13,13 @@ Cronjobs - Maakt een job aan op een herhalend schema.
 * https://www.howtogeek.com/409611/how-to-view-free-disk-space-and-disk-usage-from-the-linux-terminal/ 
 * man df
 
+
 ### Ervaren problemen
 
 
 ### Resultaat
+Script datetime gemaakt. 
+
+script discspace gemaakt. 
 
 
