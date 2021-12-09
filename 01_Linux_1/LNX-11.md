@@ -12,6 +12,7 @@ Cronjobs - Maakt een job aan op een herhalend schema.
 ### Gebruikte bronnen
 * https://www.howtogeek.com/409611/how-to-view-free-disk-space-and-disk-usage-from-the-linux-terminal/ 
 * man df
+* https://crontab.guru/
 
 
 ### Ervaren problemen
@@ -19,6 +20,6 @@ Cronjobs - Maakt een job aan op een herhalend schema.
 
 ### Resultaat
 Script datetime en discspace gemaakt, de scripts in een aparte directory gezet en execution permissions gegeven. <br/>
-Cronjobs aangemaakt 
+Cronjobs aangemaakt en ingevuld voor de scripts.
 
 

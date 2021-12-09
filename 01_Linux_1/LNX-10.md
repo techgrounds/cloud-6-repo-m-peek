@@ -18,11 +18,14 @@ PATH variable - systeem variabele die de OS gebruikt om nodige locaties te vinde
 
 ### Gebruikte bronnen
 * https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-8 
+* https://stackoverflow.com/questions/8988824/generating-random-number-between-1-and-10-in-bash-shell-script
 
 ### Ervaren problemen
-
+* PATH variable
 
 ### Resultaat
-mkdir scripts
-
-
+Nieuwe directory voor scripts aangemaakt. Scripts toegevoegd in directory: 
+- httpd.sh
+- random.sh
+- bigger.sh. 
+Scripts met chmod +x uitvoerrechten gegeven.
