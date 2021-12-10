@@ -21,6 +21,7 @@ Cronjobs - Maakt een job aan op een herhalend schema.
 ### Resultaat
 Script datetime en discspace gemaakt, de scripts in een aparte directory gezet en execution permissions gegeven. <br/>
 ![cronjobs-scripting](../00_includes/cronjobs-scriptmaking.png)
+
 Cronjobs aangemaakt en ingevuld voor de scripts.
 
 
