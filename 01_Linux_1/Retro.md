@@ -14,4 +14,5 @@ Iedereen: Gebruik 10 minuten om de antwoorden te bedenken op de gegeven vragen. 
 ## Wat kunnen wij doen om het te verbeteren?
  - Betere planning maken. 
  - Checken of de kennis iedereen genoeg kennis heeft. 
- - Planning van de dag vragen aan groepsgenoten (scrummaster)
+ - Planning van de dag vragen aan groepsgenoten (scrummaster).
+ - Meer tijd nemen voor knowledgecheck.
