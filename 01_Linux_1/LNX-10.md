@@ -8,7 +8,7 @@ PATH variable - systeem variabele die de OS gebruikt om nodige locaties te vinde
 ## Opdracht
 1. httpd server.
     - Maak een directory 'scripts' en plaats alle scripts in die directory.
-    - Voeg de scripts directory aan de PATH variable toe.
+    - Voeg de scripts directory aan de PATH variable toe.P
     - Maak een script dat een zin toevoegd aan een file, wanneer deze uitgevoerd wordt.
     - Maak eenscript dat een httpd package installeerd, activeerd en de httpd mogelijk maakt. Het script moet de httpd status in de terminal printen. 
 2. random nummer.
