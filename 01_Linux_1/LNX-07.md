@@ -16,13 +16,18 @@ PID - Bestand met het proces indentificatie nummer.
 - Stop of kill het sshd proces. 
 
 ### Gebruikte bronnen
-https://www.ibm.com/docs/en/zos/2.3.0?topic=administrators-stopping-sshd-daemon
+https://www.cyberciti.biz/faq/centos-stop-start-restart-sshd-command/
 
 ### Ervaren problemen
 
 
 ### Resultaat
-sshd - open SSH daemon.
-cat /var/run/sshd/pd - find pid 
-vmstat - check stats vm
-kill $(found pid)
+Sshd opgestart, de status opgezocht en vervolgens gestopt. 
+
+`sudo systemctl start sshd.service`
+`sudo systemctl status sshd.service`
+`sudo systemctl stop sshd.service`
+
+![processes-memory](../00_includes/processes-memory.png)
+![processes-stop](../00_includes\processes-stop.png)
+
