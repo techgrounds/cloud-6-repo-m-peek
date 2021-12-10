@@ -24,9 +24,9 @@ https://www.cyberciti.biz/faq/centos-stop-start-restart-sshd-command/
 ### Resultaat
 Sshd opgestart, de status opgezocht en vervolgens gestopt. 
 
-`sudo systemctl start sshd.service`
-`sudo systemctl status sshd.service`
-`sudo systemctl stop sshd.service`
+`sudo systemctl start sshd.service` <br/>
+`sudo systemctl status sshd.service` <br/>
+`sudo systemctl stop sshd.service` <br/>
 
 ![processes-memory](../00_includes/processes-memory.png)
 ![processes-stop](../00_includes\processes-stop.png)
