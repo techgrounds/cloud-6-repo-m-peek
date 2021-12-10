@@ -1,5 +1,5 @@
 #!/bin/bash
 
-df -h | grep root >> /var/logs/discspace
+df -h --total | grep total >> /var/logs/discspace
 #writes used discspace var/logs/discspace
 #use logrotate for script. 
