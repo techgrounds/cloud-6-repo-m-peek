@@ -8,6 +8,7 @@ Uitgewerkte opdrachten en opgedane kennis in plaatst.
 ```
 root
  |- 00_includes <  screenshots
+ |  |-01_Linux < screenshot linux opdrachten 
  |- 00_templates < Hier vind je de templates
  |
  |- 01_Linux_1
