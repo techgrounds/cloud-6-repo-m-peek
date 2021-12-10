@@ -24,4 +24,4 @@ Script datetime en discspace gemaakt, de scripts in een aparte directory gezet e
 ![cronjobs-scripting](../00_includes/cronjobs-scriptmaking.png)
 
 Cronjobs aangemaakt en ingevuld voor de scripts. Na een tijdje getest of de cronjob doet wat verwacht wordt. <br/>
-![cronjobs-test](../00_includes\cronjobs-test.png)
+![cronjobs-test](../00_includes/cronjobs-test.png)

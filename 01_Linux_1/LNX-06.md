@@ -20,7 +20,7 @@ https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/
 
 
 ### Ervaren problemen
-Eigenaar 
+
 
 ### Resultaat
 Groepen aangemaakt en verschillende users aangemaakt. Textbestand aangemaakt door user.
