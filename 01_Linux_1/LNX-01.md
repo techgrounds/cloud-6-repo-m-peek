@@ -17,4 +17,4 @@ Document niet goed lezen en vergeten de virtuele installatie disc te installeren
 
 ### Resultaat
 VM opgezet in virtual box. Command whoami uitgevoerd. 
-![whoami](../00_includes/whoami.png)
+![whoami](./00_includes/01_Linux/whoami.png)
