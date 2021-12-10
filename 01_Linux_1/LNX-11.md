@@ -16,12 +16,14 @@ Cronjobs - Maakt een job aan op een herhalend schema.
 
 
 ### Ervaren problemen
-
+Het juiste path verwoorden waar de cronjob uitgevoerd moet worden. <br/>
+Rechten om het te mogen schrijven in var/log. 
 
 ### Resultaat
 Script datetime en discspace gemaakt, de scripts in een aparte directory gezet en execution permissions gegeven. <br/>
 ![cronjobs-scripting](../00_includes/cronjobs-scriptmaking.png)
 
-Cronjobs aangemaakt en ingevuld voor de scripts.
+Cronjobs aangemaakt en ingevuld voor de scripts. Na een tijdje getest of de cronjob doet wat verwacht wordt. <br/>
+![cronjobs-test](../00_includes\cronjobs-test.png)
 
 
