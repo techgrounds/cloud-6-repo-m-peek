@@ -1,5 +1,5 @@
 # Installing a VM
-Installeer een virtuele machine en gebruik de CLI
+Installeer een virtuele machine en gebruik de CLI.
 
 ## Keyterms
 VM - virtuele machine. <br/>
