@@ -23,5 +23,6 @@ Script datetime en discspace gemaakt, de scripts in een aparte directory gezet e
 ![cronjobs-scripting](../00_includes/cronjobs-scriptmaking.png)
 
 Cronjobs aangemaakt en ingevuld voor de scripts.
+hallo
 
 
