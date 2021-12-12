@@ -23,7 +23,7 @@ Wachtwoord moest met ander command toegevoegd worden.
 
 ### Resultaat
 Via adduser een nieuwe user toegevoegd, deze een wachtwoord gegeven en door middel van gebruik van cat /etc/passwd de bestanden van de user opgezocht.
-![add-user](../00_includes/01_Linux/add-user.png)
+![add-user](../00_includes/01_Linux_01/add-user.png)
 
 Onderzocht of de nieuwe user sudo command mocht uitvoeren. Nieuwe user rechten regeven om sudo command uit te voeren. 
-![sudo-user](../00_includes/01_Linux/sudo-user.png)
+![sudo-user](../00_includes/01_Linux_01/sudo-user.png)

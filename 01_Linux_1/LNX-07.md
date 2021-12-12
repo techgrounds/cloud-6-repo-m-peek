@@ -28,6 +28,6 @@ Sshd opgestart, de status opgezocht en vervolgens gestopt.
 `sudo systemctl status sshd.service` <br/>
 `sudo systemctl stop sshd.service` <br/>
 
-![processes-memory](../00_includes/01_Linux/processes-memory.png)
-![processes-stop](../00_includes/01_Linux/processes-stop.png)
+![processes-memory](../00_includes/01_Linux_01/processes-memory.png)
+![processes-stop](../00_includes/01_Linux_01/processes-stop.png)
 

@@ -30,13 +30,13 @@ PATH variable - systeem variabele die de OS gebruikt om nodige locaties te vinde
     - random.sh
     - bigger.sh. 
 
-![scripts-making](../00_includes/01_Linux/scripts-making.png)
+![scripts-making](../00_includes/01_Linux_01/scripts-making.png)
 
 * Scripts met chmod +x uitvoerrechten gegeven.
 * $PATH variable gemaakt voor scriptdirectory.
 
-![scripts-path](../00_includes/01_Linux/scripts-path.png)
+![scripts-path](../00_includes/01_Linux_01/scripts-path.png)
 
 * Script uitgevoerd om te kijken of het werkt.
 
-![scripts-httpd](../00_includes/01_Linux/scripts-httpd.png)
+![scripts-httpd](../00_includes/01_Linux_01/scripts-httpd.png)

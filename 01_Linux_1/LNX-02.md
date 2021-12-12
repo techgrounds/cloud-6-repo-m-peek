@@ -17,4 +17,4 @@ Geen ervaren problemen.
 
 ### Resultaat
 Nieuwe directory aangemaakt met een textbestand met tekst. 
-![files-directories](../00_includes/01_Linux/files-directories.png)
+![files-directories](../00_includes/01_Linux_01/files-directories.png)

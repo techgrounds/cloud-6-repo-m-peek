@@ -21,10 +21,10 @@ Rechten om het te mogen schrijven in var/log.
 
 ### Resultaat
 Script datetime en discspace gemaakt, de scripts in een aparte directory gezet en execution permissions gegeven. <br/>
-![cronjobs-scripting](../00_includes/01_Linux/cronjobs-scriptmaking.png)
+![cronjobs-scripting](../00_includes/01_Linux_01/cronjobs-scriptmaking.png)
 
 Cronjobs aangemaakt en ingevuld voor de scripts. Na een tijdje getest of de cronjob doet wat verwacht wordt. <br/>
-![cronjobs-test](../00_includes/01_Linux/cronjobs-test.png)
+![cronjobs-test](../00_includes/01_Linux_01/cronjobs-test.png)
 
 Cronjob als sudo aangemaakt om deze als sudo uit te voeren. <br/>
-![cronjobs-sudo](../00_includes/01_Linux/cronjobs-sudo.png)
+![cronjobs-sudo](../00_includes/01_Linux_01/cronjobs-sudo.png)
