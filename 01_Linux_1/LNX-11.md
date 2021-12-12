@@ -10,9 +10,9 @@ Cronjobs - Maakt een job aan op een herhalend schema.
 - Maak een script dat de beschikbare disc space in een log bestand zet in /var/logs. Gebruik een cron job zodat het wekelijks draait. 
 
 ### Gebruikte bronnen
-* https://www.howtogeek.com/409611/how-to-view-free-disk-space-and-disk-usage-from-the-linux-terminal/ 
+* [Diskspace-usage] (https://www.howtogeek.com/409611/how-to-view-free-disk-space-and-disk-usage-from-the-linux-terminal/ 
 * man df
-* https://crontab.guru/
+* [Crontab-calculating] (https://crontab.guru/)
 
 
 ### Ervaren problemen

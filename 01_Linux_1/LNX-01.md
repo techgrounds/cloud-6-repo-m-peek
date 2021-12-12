@@ -10,7 +10,7 @@ CLI - command line interface <br/>
 Zet een VM op met een Ubuntu/CentOS. Ondek in de virtuele machine wat je gebruikersnaam is.
 
 ### Gebruikte bronnen
-https://askubuntu.com/questions/413594/what-does-no-bootable-medium-found-mean-in-virtualbo
+- [not-bootable] (https://askubuntu.com/questions/413594/what-does-no-bootable-medium-found-mean-in-virtualbo)
 
 ### Ervaren problemen
 Document niet goed lezen en vergeten de virtuele installatie disc te installeren. 

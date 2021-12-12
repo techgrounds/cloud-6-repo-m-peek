@@ -16,7 +16,7 @@ chown - Verander de ownership van files of directories
 - Verander het ownership van de file naar een andere groep. 
 
 ### Gebruikte bronnen
-- https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/
+- [users-groups] (https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/)
 - man chmod
 - man chown
 

@@ -16,7 +16,7 @@ PID - Bestand met het proces indentificatie nummer.
 - Stop of kill het sshd proces. 
 
 ### Gebruikte bronnen
-https://www.cyberciti.biz/faq/centos-stop-start-restart-sshd-command/
+- [HTTPD-service] (https://www.cyberciti.biz/faq/centos-stop-start-restart-sshd-command/)
 
 ### Ervaren problemen
 
