@@ -16,11 +16,22 @@ chown - Verander de ownership van files of directories
 - Verander het ownership van de file naar een andere groep. 
 
 ### Gebruikte bronnen
-https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/
-
+- https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/
+- man chmod
+- man chown
 
 ### Ervaren problemen
 
 
 ### Resultaat
 Groepen aangemaakt en verschillende users aangemaakt. Textbestand aangemaakt door user.
+
+``` bash
+cat > permissions.txt
+ls -l 
+chmod u +x permissions.txt
+chmod g -rw permissions.txt
+chown katsokka permissions.txt
+sudo groupadd kattenland
+chown :kattenland permissions.txt
+``` 
