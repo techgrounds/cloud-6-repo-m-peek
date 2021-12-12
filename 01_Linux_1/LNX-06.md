@@ -21,17 +21,24 @@ chown - Verander de ownership van files of directories
 - man chown
 
 ### Ervaren problemen
-
+Geen problemen ervaren.
 
 ### Resultaat
 Groepen aangemaakt en verschillende users aangemaakt. Textbestand aangemaakt door user.
 
 ``` bash
+sudo groupadd kattenland
+sudo usermod -a -G kattenland katsokka
 cat > permissions.txt
 ls -l 
-chmod u +x permissions.txt
-chmod g -rw permissions.txt
-chown katsokka permissions.txt
-sudo groupadd kattenland
-chown :kattenland permissions.txt
+chown katsokka:kattenland permissions.txt
+su katsokka
+chmod katsokka u+x permissions.txt
+chmod kattenland g-rw permissions.txt
 ``` 
+
+Katsokka het document uit laten lezen.
+![users-permissions](../00_includes/01_Linux_01/users-permissions.png)
+
+Verschillende users aan groups toegewezen.
+![user-group](../00_includes/01_Linux_01/users-group.png)
