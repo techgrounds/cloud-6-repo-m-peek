@@ -31,7 +31,7 @@ sudo groupadd kattenland
 sudo usermod -a -G kattenland katsokka
 cat > permissions.txt
 ls -l 
-chown katsokka:kattenland permissions.txt
+sudo chown katsokka:kattenland permissions.txt
 su katsokka
 chmod katsokka u+x permissions.txt
 chmod kattenland g-rw permissions.txt
