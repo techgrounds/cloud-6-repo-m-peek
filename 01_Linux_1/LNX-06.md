@@ -2,10 +2,10 @@
 Verander de toegangen van een bestand. 
 
 ## Keyterms
-Permissons - Toestemmingen <br/>
-Ownership - Eigenaar van bestand/file <br/>
-chmod - Verander file of directory permissies <br/>
-chown - Verander de ownership van files of directories 
+- Permissons - Toestemmingen 
+- Ownership - Eigenaar van bestand/file 
+- chmod - Verander file of directory permissies 
+- chown - Verander de ownership van files of directories 
 
 ## Opdracht
 - Maak een text bestand. 
@@ -16,7 +16,7 @@ chown - Verander de ownership van files of directories
 - Verander het ownership van de file naar een andere groep. 
 
 ### Gebruikte bronnen
-- [users-groups] (https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/)
+- [users-groups](https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/)
 - man chmod
 - man chown
 
@@ -38,7 +38,9 @@ chmod kattenland g-rw permissions.txt
 ``` 
 
 Katsokka het document uit laten lezen.
+
 ![users-permissions](../00_includes/01_Linux_01/users-permissions.png)
 
 Verschillende users aan groups toegewezen.
+
 ![user-group](../00_includes/01_Linux_01/users-group.png)

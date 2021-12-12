@@ -2,8 +2,8 @@
 Een script met bash commands voor het uitvoeren.
 
 ## Keyterms
-.sh - filename voor een script. <br/>
-PATH variable - systeem variabele die de OS gebruikt om nodige locaties te vinden om van de CLI uitvoerbaar maakt.
+- .sh - filename voor een script. 
+- PATH variable - systeem variabele die de OS gebruikt om nodige locaties te vinden om van de CLI uitvoerbaar maakt.
 
 ## Opdracht
 1. httpd server.
@@ -17,9 +17,9 @@ PATH variable - systeem variabele die de OS gebruikt om nodige locaties te vinde
     - Maak een script dat een random nummer genereerd, het in een variabele zet en het aan alleen aan een textfile hangt als het groter is als 5. Als het nummer kleiner is als 5 moet het een zin in hetzelfde bestand printen
 
 ### Gebruikte bronnen
-* [Install-Apache2] (https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-8)
-* [Random-number] (https://stackoverflow.com/questions/8988824/generating-random-number-between-1-and-10-in-bash-shell-script)
-* [Path] (https://askubuntu.com/questions/551990/what-does-path-mean)
+* [Install-Apache2](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-8)
+* [Random-number](https://stackoverflow.com/questions/8988824/generating-random-number-between-1-and-10-in-bash-shell-script)
+* [Path](https://askubuntu.com/questions/551990/what-does-path-mean)
 
 ### Ervaren problemen
 * PATH variable
