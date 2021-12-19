@@ -1,6 +1,7 @@
-Scrum master: Geef iedereen 10 minuten om zijn antwoorden op deze vragen te bedenken. Schrijf daarna de antwoorden op. 
+# Retro van groep 2 van week 1
+Scrum master: Mylene
 
-Iedereen: Gebruik 10 minuten om de antwoorden te bedenken op de gegeven vragen. Bespreek de antwoorden met elkaar.
+Groepsleden: AbdouSamad; Matias; Shikha.
 
 ## Wat ging goed?
  - Dingen bespreekbaar maken.
