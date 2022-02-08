@@ -6,6 +6,7 @@ import random
 
 # generate random int
 goal = random.randint(1,100)
+print(goal)
 
 win = False
 tries = 0
