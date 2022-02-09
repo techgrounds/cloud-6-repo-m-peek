@@ -1,0 +1,4 @@
+- [Bicep-documentatie](https://docs.microsoft.com/nl-nl/azure/azure-resource-manager/bicep/)
+- [Bicep best practices](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices)
+- [Resouces with bicep and ARM templates](https://docs.microsoft.com/en-us/azure/templates/)
+- [ARM sjabloondocumentatie](https://docs.microsoft.com/nl-nl/azure/azure-resource-manager/templates/)
