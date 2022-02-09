@@ -1,6 +1,6 @@
-x = 5
-for i in range (10):
-    # do something here
-    print(i)
-    print(i*x)
+a = [6, 15, 29, 31, 38]
+print('My list:', a)
 
+for i in a:
+    print(i[])
+ 
