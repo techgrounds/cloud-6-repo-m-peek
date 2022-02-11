@@ -10,10 +10,11 @@ https://www.digite.com/agile/story-mapping/
 ## Learnings:
 
 --- 
-# Log [datum]
+# Log [10-02-22]
 
 ## Dagverslag (1 zin):
-
+- Architectuur bespreking.
+- Bicep learning path.
 ## Opstakels:
 
 ## Oplossingen:
