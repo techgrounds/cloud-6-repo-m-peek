@@ -1,4 +1,8 @@
 - [Bicep-documentatie](https://docs.microsoft.com/nl-nl/azure/azure-resource-manager/bicep/)
 - [Bicep best practices](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/best-practices)
 - [Resouces with bicep and ARM templates](https://docs.microsoft.com/en-us/azure/templates/)
+- [Snelstart: Bicep-bestanden met VS-code](https://docs.microsoft.com/nl-nl/azure/azure-resource-manager/bicep/quickstart-create-bicep-use-visual-studio-code?tabs=CLI)
 - [ARM sjabloondocumentatie](https://docs.microsoft.com/nl-nl/azure/azure-resource-manager/templates/)
+- [Disk Encryption for VM](https://docs.microsoft.com/en-us/azure/security/fundamentals/azure-disk-encryption-vms-vmss)
+- [Overview encryption options](https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview)
+- [Bicep examples](https://github.com/Azure/bicep/tree/main/docs/examples)

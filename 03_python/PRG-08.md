@@ -16,6 +16,8 @@ for key, value in LC.items():
 ```
 ### Exercise 2: 
 ``` python
+import csv 
+
 LC = {
     'First name': 'Coen', 
     'Last name': 'Meulenkamp', 

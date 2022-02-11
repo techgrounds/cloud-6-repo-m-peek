@@ -16,7 +16,7 @@ while x <= 10:
 ``` python
 x = 5
 
-for i in range (10):
+for i in range (50):
     print(i)
     print(i*x)
 
