@@ -1,6 +1,12 @@
 # Functions
+Een functie is een blok code die alleen gedraaid wordt wanneer die geroepen wordt.
 
 ## Opdracht
+Creëer meerdere scripts waarbij gebruik wordt gemaakt van functies. 
+
+### Gebruikte bronnen
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/#toc)
+- [W3 Schools Python](https://www.w3schools.com/python/default.asp)
 
 ### Exersice 1:
 ``` python
@@ -21,8 +27,8 @@ myfunction()
 
 x = input("your name:")
 myfunction()
-
 ```
+
 ### Exersice 3:
 ``` python
 def avg(b,c):

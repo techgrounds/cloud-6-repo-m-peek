@@ -1,8 +1,7 @@
-a = [6, 15, 29, 31, 38]
-print('My list:', a)
+a = 'int' #string
+b = 7 #integer
+c = False #boolean
+d = "18.5" #integer in a string
 
-for i in range(len(a)):
-    if a[i] == a[-1]:  
-        print(a[i] + a[0])
-    else:
-        print(a[i] + a[i+1])
+print(b + float(d))
+

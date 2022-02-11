@@ -1,6 +1,20 @@
 # Conditions
+Condities kunnen op verschillende manieren gebruikt worden, meestal in 'if' statements en loops.
+
+### Keyterms
+- Equals: a == b
+- Not Equals: a != b
+- Less than: a < b
+- Less than or equal to: a <= b
+- Greater than: a > b
+- Greater than or equal to: a >= b
 
 ## Opdracht
+Maak een aantal scripts waarbij er gebruik wordt gemaakt van scripts.
+
+### Gebruikte bronnen
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/#toc)
+- [W3 Schools Python](https://www.w3schools.com/python/default.asp)
 
 ### Exercise 1:
 ``` python
@@ -14,7 +28,6 @@ else:
 ### Exercise 2:
 ``` python
 x = 0 
-
 while x != 100:
     x = int(input('Please put in a number: ')) 
     if x == 100:

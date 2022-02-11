@@ -1,6 +1,12 @@
 # Key-value pairs
+Dictionaries in Pyton maken gebruik van key-value pairs.
 
 ## Opdracht
+Schrijf een aantal scripts met een key en een value toegewezen. 
+
+### Gebruikte bronnen
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/#toc)
+- [W3 Schools Python](https://www.w3schools.com/python/default.asp)
 
 ### Exercise 1:
 ``` python
@@ -16,6 +22,7 @@ for key, value in LC.items():
 ```
 ### Exercise 2: 
 ``` python
+
 import csv 
 
 LC = {
