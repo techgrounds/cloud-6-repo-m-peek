@@ -14,8 +14,8 @@ param tagValues object
 @description('naming of the resources')
 param recoveryvaultName string = 'recvault${uniqueString(resourceGroup().id)}'
 param backupPoliciesName string = 'bPolicy${uniqueString(resourceGroup().id)}'
-param protectedName1 string = 'prtAdmin${uniqueString(resourceGroup().id)}'
-param protectedName2 string = 'prtWeb${uniqueString(resourceGroup().id)}'
+//param protectedName1 string = 'prtAdmin${uniqueString(resourceGroup().id)}'
+//param protectedName2 string = 'prtWeb${uniqueString(resourceGroup().id)}'
 
 resource recoveryVault 'Microsoft.RecoveryServices/vaults@2021-11-01-preview' = {
   name: recoveryvaultName
@@ -37,28 +37,27 @@ resource backupPolicies 'Microsoft.RecoveryServices/vaults/backupPolicies@2021-1
     backupManagementType: 'AzureIaasVM'
     instantRPDetails: {}
     schedulePolicy: {
-      schedulePolicyType: 'LogSchedulePolicy'
+      schedulePolicyType: 'SimpleSchedulePolicy'
+      scheduleRunFrequency: 'Daily'
+      scheduleRunTimes: [
+        '2022-03-08T08:00:00Z'
+      ]
+      scheduleWeeklyFrequency: 0
     }
-  }
-}
-
-resource protectedItems1 'Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2021-12-01' = {
-  parent: recoveryVault
-  name: protectedName1
-  location: location
-  tags: tagValues
-  properties: {
-    protectedItemType: 'Microsoft.Compute/virtualMachines'
-  }
-}
-
-
-resource protectedItems2 'Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2021-12-01' = {
-  parent: 
-  name: protectedName2
-  location: location
-  tags: tagValues
-  properties: {
-    protectedItemType: 'Microsoft.Compute/virtualMachines'
+    retentionPolicy: {
+      retentionPolicyType: 'LongTermRetentionPolicy'
+      dailySchedule: {
+        retentionTimes: [
+          '2022-03-08T08:00:00Z'
+        ]
+        retentionDuration: {
+          count: 7
+          durationType: 'Days'
+        }
+      }
+    }
+    instantRpRetentionRangeInDays: 2
+    timeZone: 'UTC'
+    protectedItemsCount: 0
   }
 }

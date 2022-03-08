@@ -73,6 +73,14 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
         }
       }
     }
+    minimumTlsVersion: 'TLS1_2'
+    networkAcls: {
+      bypass: 'AzureServices'
+      defaultAction: 'Allow'
+      ipRules: []
+      virtualNetworkRules: []
+    }
+    supportsHttpsTrafficOnly: false
   }
 }
 
