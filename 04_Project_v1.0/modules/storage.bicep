@@ -80,7 +80,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
       ipRules: []
       virtualNetworkRules: []
     }
-    supportsHttpsTrafficOnly: false
+    supportsHttpsTrafficOnly: true
   }
 }
 
