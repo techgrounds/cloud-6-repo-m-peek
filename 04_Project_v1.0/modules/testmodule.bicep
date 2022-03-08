@@ -1,11 +1,3 @@
-/* tested and works
-this module wil launch:
-- keyvault
-- key
-- disk encryptionset
-- managed identity
-- access policies
-*/
 
 targetScope = 'resourceGroup'
 
@@ -29,7 +21,6 @@ param tenantId string = subscription().tenantId
 param objectId string = 'de00d0e9-03c6-457c-bfff-0e295242fd26'
 
 
-// create keyvault resource
 resource keyVault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
   name: keyVaultName
   location: location
@@ -114,7 +105,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
   }
 }
 
-// create key in keyvault
 resource keyVaultKey 'Microsoft.KeyVault/vaults/keys@2021-11-01-preview' = {
   name: keyName
   tags: tagValue
@@ -133,7 +123,6 @@ resource keyVaultKey 'Microsoft.KeyVault/vaults/keys@2021-11-01-preview' = {
   }
 }
 
-// create diskencryptionset
 resource diskencryptionset 'Microsoft.Compute/diskEncryptionSets@2021-08-01' = {
   name: diskEncrypName
   location: location
@@ -153,7 +142,6 @@ resource diskencryptionset 'Microsoft.Compute/diskEncryptionSets@2021-08-01' = {
   }
 }
 
-// create user assigned identity
 resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-11-30' = {
   name: managedIdName
   location: location
@@ -163,7 +151,6 @@ resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-
   ]
 }
 
-// create vault accesspolicies for diskencryptionset and managed identity
 resource accessPolicies 'Microsoft.KeyVault/vaults/accessPolicies@2021-11-01-preview' = {
   name: accesPoliciesName
   parent: keyVault
@@ -243,7 +230,6 @@ param adminPassword string
 param OSVersion1 string = '2022-datacenter-azure-edition'
 
 
-// works, add ssh rule
 resource adminSecGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
   name: adminSecurityName
   location: location
@@ -271,7 +257,6 @@ resource adminSecGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
   }
 }
 
-// required properties filled out
 resource publicIPadmin 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
   name: adminPublicIpName
   location: location
@@ -286,7 +271,6 @@ resource publicIPadmin 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
   }
 }
 
-// required properties filled out
 resource vnetadmin 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   name: vNetAdminName
   location: location
@@ -311,7 +295,6 @@ resource vnetadmin 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   }
 }
 
-// requiredproperties filled out
 resource adminNIC 'Microsoft.Network/networkInterfaces@2021-05-01' = {
   name: nicName
   location: location
@@ -341,7 +324,6 @@ resource adminNIC 'Microsoft.Network/networkInterfaces@2021-05-01' = {
   }
 }
 
-// hasn't been tested
 resource admin_vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
   name: adminvmName
   location: location
@@ -442,7 +424,6 @@ param webPassword string
 @description('Windows version for the VM; picks a fully patched Gen2 image of this given Windows version.')
 param OSVersion string = '21_10-gen2'
 
-// find out what to fill out for requirements. 
 resource webSecGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
   name: webSecurityName
   location: location
@@ -504,7 +485,6 @@ resource webSecGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
   }
 }
 
-// works in admin
 resource publicIPweb 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
   name: publicIpName
   location: location
@@ -519,7 +499,6 @@ resource publicIPweb 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
   }
 }
 
-// works in admin
 resource vnetweb 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   name: vNetWebName
   location: location
@@ -544,7 +523,6 @@ resource vnetweb 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   }
 }
 
-// works in admin
 resource webNIC 'Microsoft.Network/networkInterfaces@2021-05-01' = {
   name: webnicName
   location: location
@@ -571,7 +549,6 @@ resource webNIC 'Microsoft.Network/networkInterfaces@2021-05-01' = {
   }
 }
 
-// needs to be tested
 resource webVM 'Microsoft.Compute/virtualMachines@2021-11-01' = {
   name: webVMname
   location: location
@@ -670,6 +647,37 @@ resource vnetPeering2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@
     remoteVirtualNetwork: {
       id: vnetadmin.id
     }
+  }
+}
+
+@description('naming of the resources')
+param storageAccountName string = 'storacc${uniqueString(resourceGroup().id)}'
+//param storageblobName string = 'storblob${uniqueString(resourceGroup().id)}'
+//param containerName string = 'cont${uniqueString(resourceGroup().id)}'
+
+// create storage account
+resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
+  name: storageAccountName
+  location: location
+  tags: tagValues
+  sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'StorageV2'
+  properties: {
+    accessTier: 'Hot'
+    allowBlobPublicAccess: true
+    allowCrossTenantReplication: true
+    allowSharedKeyAccess: true
+    defaultToOAuthAuthentication: false
+    minimumTlsVersion: 'TLS1_2'
+    networkAcls: {
+      bypass: 'AzureServices'
+      defaultAction: 'Allow'
+      ipRules: []
+      virtualNetworkRules: []
+    }
+    supportsHttpsTrafficOnly: false
   }
 }
 
