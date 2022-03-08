@@ -10,3 +10,4 @@
 /testscrips_project/Project_test_scripts/modules/secrets.bicep
 /04_Project_v1.0/modules/sshkey.bicep
 /04_Project_v1.0/modules/sshkey.pub
+/04_Project_v1.0/modules/testmodule.bicep
