@@ -1,27 +1,26 @@
-/* module needs work, is not tested
-this will launch:
-- storage account
-- blobservice
-- container
-*/
-
-targetScope = 'resourceGroup'
-
-@description('outputs of other files to use')
+@description('parameters from main')
 param managedId string
 param keyName string
 param keyvaultUri string
-
-@description('location for the resources')
 param location string
-
-@description('tags for the resources')
 param tagValues object
 
 @description('naming of the resources')
 param storageAccountName string = 'storacc${uniqueString(resourceGroup().id)}'
-param storageblobName string = 'storblob${uniqueString(resourceGroup().id)}'
 param containerName string = 'cont${uniqueString(resourceGroup().id)}'
+//param webservScript string = 'install_apache'
+
+/* needs work
+resource deployWebserv 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
+  name: webservScript
+  location: location
+  kind: 'AzureCLI'
+  properties: {
+    azCliVersion: 
+    retentionInterval: 
+  }
+}
+*/
 
 // create storage account
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
@@ -40,7 +39,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
   }
   properties: {
     accessTier: 'Hot'
-    allowBlobPublicAccess: true
+    allowBlobPublicAccess: false
     allowCrossTenantReplication: true
     allowSharedKeyAccess: true
     defaultToOAuthAuthentication: false
@@ -80,15 +79,16 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
       ipRules: []
       virtualNetworkRules: []
     }
-    supportsHttpsTrafficOnly: true
+    supportsHttpsTrafficOnly: false
   }
 }
 
 // create blobservice
 resource blobsevice 'Microsoft.Storage/storageAccounts/blobServices@2021-08-01' = {
-  name: storageblobName
+  name: 'default'
   parent: storageAccount
   properties: {
+    automaticSnapshotPolicyEnabled: false
     changeFeed: {
       enabled: false
     }
@@ -96,8 +96,13 @@ resource blobsevice 'Microsoft.Storage/storageAccounts/blobServices@2021-08-01' 
       days: 7
       enabled: true
     }
+    deleteRetentionPolicy: {
+      days: 7
+      enabled: true
+    }
     isVersioningEnabled: false
     restorePolicy: {
+      days: 7
       enabled: false
     }
   }

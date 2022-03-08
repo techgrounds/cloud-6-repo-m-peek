@@ -1,21 +1,6 @@
-/* network is tested in admin server, needs to be changed, 
-need to use other vm resource template
-this will launch:
-naming is for purpose of testing.
-- Network security group
-- public ip 
-- webserver vnet
-- nic
-- linux virtual machine 
-*/
-
-targetScope = 'resourceGroup'
-
-@description('set the location for the resources')
-param location string = resourceGroup().location
-
 @description('parameters to get out of main module')
 param tagValues object 
+param location string 
 param trustedIP array = []
 param diskEncryptionId string
 param environment string 
@@ -180,7 +165,7 @@ resource webNIC 'Microsoft.Network/networkInterfaces@2021-05-01' = {
 }
 
 // needs to be tested
-resource webVM 'Microsoft.Compute/virtualMachines@2021-11-01' = {
+resource web_VM 'Microsoft.Compute/virtualMachines@2021-11-01' = {
   name: webVMname
   location: location
   tags: tagValues
@@ -208,7 +193,7 @@ resource webVM 'Microsoft.Compute/virtualMachines@2021-11-01' = {
       ]
     }
     osProfile: {
-      adminPassword: webPassword
+      adminPassword: null
       adminUsername: webUserName
       allowExtensionOperations: true
       computerName: webVMname
@@ -255,3 +240,5 @@ resource webVM 'Microsoft.Compute/virtualMachines@2021-11-01' = {
 @description('the output of the resources')
 output vnetWebId string = vnetweb.id
 output webvnetname string = vnetweb.name
+output webservId string = web_VM.id
+output webservname string = web_VM.name

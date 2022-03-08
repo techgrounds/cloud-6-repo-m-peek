@@ -1,25 +1,11 @@
-/* Network is tested, VM isn't tested.  
-this will launch:
-naming is for purpose of testing.
-- Network security group
-- public ip 
-- admin vnet
-- nic
-- windows virtual machine 
-*/
-
-targetScope = 'resourceGroup'
-
-@description('set the location for the resources')
-param location string = resourceGroup().location
-
 @description('parameters to get out of main module')
+param location string 
 param tagValues object 
 param trustedIP array = []
 param diskEncryptionId string
 param environment string 
 
-@description('naming of the resources')
+@description('naming of resources')
 param adminSecurityName string = 'admin-nsg'
 param adminSecRules string = 'admin-nsg-rules'
 param adminPublicIpName string = 'publicIP1'
@@ -209,4 +195,6 @@ resource admin_vm 'Microsoft.Compute/virtualMachines@2021-11-01' = {
 @description('the output of the resources')
 output vnetAdminiD string = vnetadmin.id
 output adminvnetname string = vnetadmin.name
+output adminservId string = admin_vm.id
+output adminservname string = admin_vm.name
 

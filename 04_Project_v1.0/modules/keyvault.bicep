@@ -1,21 +1,7 @@
-/* tested and works
-this module wil launch:
-- keyvault
-- key
-- disk encryptionset
-- managed identity
-- access policies
-*/
-
-targetScope = 'resourceGroup'
-
-@description('location of the resources')//outputs from main
-param location string = resourceGroup().location
-
-@description('tags for the resources')
-param tagValue object = {
-  project: 'version1.0'
-}
+@description('values from main')
+param tagValue object
+param location string 
+param objectId string 
 
 @description('naming of the resources')
 param keyVaultName string = 'vault${uniqueString(resourceGroup().id)}'
@@ -26,8 +12,6 @@ param accesPoliciesName string = 'add'
 
 @description('specify userdata')
 param tenantId string = subscription().tenantId
-param objectId string = 'de00d0e9-03c6-457c-bfff-0e295242fd26'
-
 
 // create keyvault resource
 resource keyVault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
