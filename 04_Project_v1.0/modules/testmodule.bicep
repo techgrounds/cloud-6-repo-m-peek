@@ -652,8 +652,8 @@ resource vnetPeering2 'Microsoft.Network/virtualNetworks/virtualNetworkPeerings@
 
 @description('naming of the resources')
 param storageAccountName string = 'storacc${uniqueString(resourceGroup().id)}'
-//param storageblobName string = 'storblob${uniqueString(resourceGroup().id)}'
-//param containerName string = 'cont${uniqueString(resourceGroup().id)}'
+param storageblobName string = 'storblob${uniqueString(resourceGroup().id)}'
+param containerName string = 'cont${uniqueString(resourceGroup().id)}'
 
 // create storage account
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
@@ -664,12 +664,47 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
     name: 'Standard_LRS'
   }
   kind: 'StorageV2'
+  identity: {
+    type: 'UserAssigned'
+    userAssignedIdentities: {
+      '${managedIdentity.id}': {}
+    }
+  }
   properties: {
     accessTier: 'Hot'
     allowBlobPublicAccess: true
     allowCrossTenantReplication: true
     allowSharedKeyAccess: true
     defaultToOAuthAuthentication: false
+    encryption: {
+      identity: {
+        userAssignedIdentity: managedIdentity.id
+      }
+      keySource: 'Microsoft.Keyvault'
+      keyvaultproperties: {
+        keyname: keyName
+        keyvaulturi: keyVault.properties.vaultUri
+      }
+      requireInfrastructureEncryption: false
+      services: {
+        blob: {
+          enabled: true
+          keyType: 'Account'
+        }
+        file: {
+          enabled: true
+          keyType: 'Account'
+        }
+        queue: {
+          enabled: true
+          keyType: 'Account'
+        }
+        table: {
+          enabled: true
+          keyType: 'Account'
+        }
+      }
+    }
     minimumTlsVersion: 'TLS1_2'
     networkAcls: {
       bypass: 'AzureServices'
@@ -677,7 +712,40 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
       ipRules: []
       virtualNetworkRules: []
     }
-    supportsHttpsTrafficOnly: false
+    supportsHttpsTrafficOnly: true
+  }
+}
+
+// create blobservice
+resource blobsevice 'Microsoft.Storage/storageAccounts/blobServices@2021-08-01' = {
+  name: storageblobName
+  parent: storageAccount
+  properties: {
+    changeFeed: {
+      enabled: false
+    }
+    containerDeleteRetentionPolicy: {
+      days: 7
+      enabled: true
+    }
+    isVersioningEnabled: false
+    restorePolicy: {
+      enabled: false
+    }
+  }
+}
+
+// create container
+resource storageContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-08-01' = {
+  name: containerName
+  parent: blobsevice
+  properties: {
+    defaultEncryptionScope: '$account-encryption-key'
+    denyEncryptionScopeOverride: false
+    immutableStorageWithVersioning: {
+      enabled: false
+    }
+    publicAccess: 'None'
   }
 }
 
