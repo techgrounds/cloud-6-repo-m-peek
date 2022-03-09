@@ -8,9 +8,9 @@ param tagValues object
 @description('naming of the resources')
 param storageAccountName string = 'storacc${uniqueString(resourceGroup().id)}'
 param containerName string = 'cont${uniqueString(resourceGroup().id)}'
-param webservScript string = 'install_apache'
+// param webservScript string = 'install_apache'
 
-
+/*
 resource deployWebserv 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
   name: webservScript
   location: location
@@ -29,7 +29,7 @@ resource deployWebserv 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
     }
   }
 }
-
+*/
 
 // create storage account
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {

@@ -219,29 +219,28 @@ Stap voor stap komen we er wel
 ## Log [08-03-22]
 
 ### Dagverslag (1 zin):
-- Backup van vm's
-    - moet in andere resourcegroup (best practice.)
-- Storageaccount
-- Deploymentscript
-- Modules
+- Voor de backup van de VM's werken de vault en de backup policies
+- Storageaccount werkt niet in één file met de keyvault.
+- Main in elkaar gezet om de infrastructuur te testen
 ### Opstakels:
-
+Keyvault error voor de storage account bij deployment in een file.
 ### Oplossingen:
-
+Testen ook in modules.
 ### Learnings:
+Soms is de oplossing dichter bij als je denkt. 
 
 --- 
 ## Log [09-03-22]
 
 ### Dagverslag (1 zin):
-- documentatie
-- parameterfile
-- secretfile
+- Postdeploymentscript werkend gemaakt
+- Documentatie bijgewerkt
 ### Opstakels:
-
+Verschil tussen ontwerp en beslissingsdocumentatie
 ### Oplossingen:
-
+Uitgeschreven wat de vereisten zijn en vanuit daar verder gewerkt. 
 ### Learnings:
+Planning is het halve werk
 
 --- 
 ## Log [10-03-22]
