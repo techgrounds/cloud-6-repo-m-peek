@@ -1,14 +1,19 @@
 @description('parameters to get out of main file')
 param location string = resourceGroup().location
-//param adminservId string
-//param webservId string
 param tagValues object
+param webvmId string
+param webvmName string
+param adminvmId string
+param adminvmName string 
 
 @description('naming of the resources')
 param recoveryvaultName string = 'recvault${uniqueString(resourceGroup().id)}'
 param backupPoliciesName string = 'bPolicy${uniqueString(resourceGroup().id)}'
-//param adminProtectName string = 'prtAdmin${uniqueString(resourceGroup().id)}'
-//param webProtectName string = 'prtWeb${uniqueString(resourceGroup().id)}'
+param adminProtect string = 'vm;iaasvmcontainerv2;${resourceGroup().name};${adminvmName}'
+param webProtect string = 'vm;iaasvmcontainerv2;${resourceGroup().name};${webvmName}'
+param webcontainer string = 'iaasvmcontainer;iaasvmcontainerv2;${resourceGroup().name};${webvmName}'
+param admincontainer string = 'iaasvmcontainer;iaasvmcontainerv2;${resourceGroup().name};${adminvmName}'
+param fabricName string = 'Azure'
 
 resource recoveryVault 'Microsoft.RecoveryServices/vaults@2021-11-01-preview' = {
   name: recoveryvaultName
@@ -55,4 +60,20 @@ resource backupPolicies 'Microsoft.RecoveryServices/vaults/backupPolicies@2021-1
   }
 }
 
-// add protected items
+resource webprotection 'Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2021-12-01' = {
+  name: '${recoveryvaultName}/${fabricName}/${webcontainer}/${webProtect}'
+  properties: {
+    protectedItemType: 'Microsoft.ClassicCompute/virtualMachines'
+    policyId: backupPolicies.id
+    sourceResourceId: webvmId
+  }
+}
+
+resource adminprotection 'Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2021-12-01' = {
+  name: '${recoveryvaultName}/${fabricName}/${admincontainer}/${adminProtect}'
+  properties: {
+    protectedItemType: 'Microsoft.ClassicCompute/virtualMachines'
+    policyId: backupPolicies.id
+    sourceResourceId: adminvmId
+  }
+}

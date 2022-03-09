@@ -85,4 +85,15 @@ module storage 'modules/storage.bicep' = {
   }
 }
 
-
+module backup 'modules/backup.bicep' = {
+  scope: resourceGroup
+  name: 'backup_mod'
+  params: {
+    location: location
+    adminvmId: adminserv.outputs.adminservId
+    adminvmName: adminserv.outputs.adminservname
+    tagValues: tagValue
+    webvmId: webserv.outputs.webservId
+    webvmName: webserv.outputs.webservname
+  }
+}
