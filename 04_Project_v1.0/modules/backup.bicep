@@ -1,14 +1,14 @@
 @description('parameters to get out of main file')
 param location string = resourceGroup().location
-param adminservId string
-param webservId string
+//param adminservId string
+//param webservId string
 param tagValues object
 
 @description('naming of the resources')
 param recoveryvaultName string = 'recvault${uniqueString(resourceGroup().id)}'
 param backupPoliciesName string = 'bPolicy${uniqueString(resourceGroup().id)}'
-param adminProtectName string = 'prtAdmin${uniqueString(resourceGroup().id)}'
-param webProtectName string = 'prtWeb${uniqueString(resourceGroup().id)}'
+//param adminProtectName string = 'prtAdmin${uniqueString(resourceGroup().id)}'
+//param webProtectName string = 'prtWeb${uniqueString(resourceGroup().id)}'
 
 resource recoveryVault 'Microsoft.RecoveryServices/vaults@2021-11-01-preview' = {
   name: recoveryvaultName
@@ -54,25 +54,5 @@ resource backupPolicies 'Microsoft.RecoveryServices/vaults/backupPolicies@2021-1
     protectedItemsCount: 0
   }
 }
-
-resource webProtection 'Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2021-12-01' = {
-  name: webProtectName
-  tags: tagValues
-  properties: {
-    protectedItemType: 'Microsoft.Compute/virtualMachines'
-    policyId: backupPolicies.id
-    sourceResourceId: webservId
-  }
-} 
-
-resource adminProtection 'Microsoft.RecoveryServices/vaults/backupFabrics/protectionContainers/protectedItems@2021-12-01' = {
-  name: adminProtectName
-  tags: tagValues
-  properties: {
-    protectedItemType: 'Microsoft.Compute/virtualMachines'
-    policyId: backupPolicies.id
-    sourceResourceId: adminservId
-  }
-} 
 
 // add protected items

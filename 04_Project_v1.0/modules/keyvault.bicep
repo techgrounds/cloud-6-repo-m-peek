@@ -73,22 +73,6 @@ resource keyVault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
             'restore'
             'set'  
           ]
-          storage: [
-            'backup'
-            'delete'
-            'deletesas'
-            'get'
-            'getsas'
-            'list'
-            'listsas'
-            'purge'
-            'recover'
-            'regeneratekey'
-            'restore'
-            'set'
-            'setsas'
-            'update'  
-          ]
         }
         tenantId: tenantId
       }
@@ -173,45 +157,13 @@ resource accessPolicies 'Microsoft.KeyVault/vaults/accessPolicies@2021-11-01-pre
         objectId: diskencryptionset.identity.principalId
         permissions: {
           keys: [
-            'backup'
-            'create'
-            'decrypt'
-            'delete'
-            'encrypt'
             'get'
-            'getrotationpolicy'
-            'import'
             'list'
-            'purge'
-            'recover'
-            'release'
-            'restore'
-            'rotate'
-            'setrotationpolicy'
-            'sign'
             'unwrapKey'
-            'update'
-            'verify'
             'wrapKey'
           ]
           secrets: []
           certificates: []
-          storage: [
-            'backup'
-            'delete'
-            'deletesas'
-            'get'
-            'getsas'
-            'list'
-            'listsas'
-            'purge'
-            'recover'
-            'regeneratekey'
-            'restore'
-            'set'
-            'setsas'
-            'update'  
-          ]
         }
       }
       {
@@ -226,22 +178,6 @@ resource accessPolicies 'Microsoft.KeyVault/vaults/accessPolicies@2021-11-01-pre
           ]
           secrets: []
           certificates: []
-          storage: [
-            'backup'
-            'delete'
-            'deletesas'
-            'get'
-            'getsas'
-            'list'
-            'listsas'
-            'purge'
-            'recover'
-            'regeneratekey'
-            'restore'
-            'set'
-            'setsas'
-            'update'    
-          ]
         }
       }
     ] 

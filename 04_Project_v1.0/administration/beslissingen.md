@@ -3,8 +3,6 @@
 Alle beslissingen met betrekking tot project: Bicep, Infrastructure as Code.
 
 Opbouw van beslissing log:
-- Well-architected framework Azure (WAF)
-    - Beschrijving van de pillars van de WAF. En onderdelen van de beslissingen die daarin vallen
 - Project vereisten. 
 - Resourcegroups
     - Beslissingen met betrekking tot de resourcegroups
@@ -13,22 +11,6 @@ Opbouw van beslissing log:
 - Recomendations 
     - Beschrijving van de recommendations met betrekking op de WAF. 
 
-
-## Well-architected framework Azure
-
-* Reliability
-    - Recover from failures and continue to function.
-* Security
-    - Protecting applications and data from threats. 
-        - Encrytie van disks
-        - Webserver enkel bereikbaar via managementserver
-        - Network Security Group Rules
-* Cost Optimazation
-    - Managing costs to maximize the value deliverd
-* Operational Excelence
-    - Operations processes that keep a system running in production.
-* Preformance Efficiency
-    - The ability of a system to adapt on changes in load. 
 
 ## Project v1.0
 
@@ -64,28 +46,57 @@ Uiteindelijk langere modules geschreven, waardoor onderverdelen in de resourcegr
 - resourcegroup wordt nu aangemaakt in main, vervolgens worden de verschillende resources in die groep geplaatst. 
 
 ### Modules
-
 De verschillende resources zijn ingedeeld in verschillende modules die vanuit de main.bicep uitgevoerd worden. 
-- Netwerk module
-- Keyvault module
-- Management Server 
-- Webserver
-- Storage
+- Keyvault 
+- Admin server 
+- Web server
+- Network peering
+- Storage/deploymentscript
+- Backup van de VM's
 
-#### Netwerk
-De netwerkmodule bestaat uit de volgende resources
-- Public IP
-    - nodig voor beide VM's
-- Network Security Groups
-- Virtual Network
-- NIC, network Interface
-- Peering
+In de main module moeten op dit moment nog een aantal dingen gedefined worden. 
 
-#### Keyvault
+#### Keyvault 
+Genereerd een keyvault, key, diskencryptionset, user assigned identity en accespolicies.
 
-#### Management Server
+Keuzes met betrekking tot de resources:
+* Keyvault:
+    - vrijgeving in premissies
+    - public network access is enabled
+* Key:
+    - keysize: 2048
+        - keysize vergroten maakt de key veiliger
+    - keytype: RSA
+    - key heeft alle permissies
+* Diskencryptionset
+* User assigned identity
+* Accesspolicies
+    - accesspolicies keypermissies: get, list, unwrap en wrap; aan user assigned identity en diskencryptieset.
 
-#### Webserver
+#### Admin server
+Genereerd een netwerk security group, public IP, virtual network met subnet, network interface en windows virtual machine
 
-#### Storage
+* Netwerk security group
+* Public IP
+* Virtual network
+* Network interface
+* Virtual machine
+
+#### Web server
+Genereerd een netwerk security group, public IP, virtual network, network interface en windows virtual machine
+
+* Netwerk security group
+* Public IP
+* Virtual network
+* Network interface
+* Virtual machine
+
+#### Network peering
+Activeerd peering tussen de webserver en de adminserver. 
+
+#### Storage/deploymentscript
+Genereerd storageaccount, blobservice, container, activeerd deploymentscript en plaatst deze in container.  
+
+#### Backup 
+Genereerd recoveryvault, backup policy, en stelt protected items in.
 
