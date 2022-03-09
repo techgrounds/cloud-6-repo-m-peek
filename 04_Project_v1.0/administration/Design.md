@@ -1,19 +1,19 @@
-# Beslising log
+# Ontwerpdocumentatie
+Praktische en technische informatie over de architectuur van het IaC bicep project. 
+- Visualisatie van wat, in welke volgoorde het in de cloud.
 
-Alle beslissingen met betrekking tot project: Bicep, Infrastructure as Code.
-
-Opbouw van beslissing log:
+Opbouw ontwerpdocumentatie:
 - Project vereisten. 
-- Resourcegroups
-    - Beslissingen met betrekking tot de resourcegroups
+- Project ontwerp
 - Modules
-    - Beslissingen per module
+    - Ontwerpbeslissingen per module
 - Recomendations 
     - Beschrijving van de recommendations met betrekking op de WAF. 
 
 
-## Project v1.0
+## Project vereisten
 
+### Versie 1.0
 Vereisten:
 - Alle VM disks moeten encrypted zijn
 - De webserver moet dagelijks gebackupt worden. De backups moeten 7 dagen behouden worden.
@@ -39,7 +39,18 @@ Resource ontwerp van de architect:
     - Storage account
         - PostDeploymentScrips
 
-### Resourcegroups
+### Versie 1.1
+Vereisten:
+- De webserver moet via een load balancer bereikbaar zijn
+    - De server moet geen eigen publiek IP adress meer hebben
+- HTTP moet geupgrade naar HTTPS
+    - Verbinding moet beveiligd zijn met minimaal TLS 1.2
+- Webserver moet een health check ondergaan
+    - Als de health check faalt moet de server automatisch hersteld moeten worden
+- Scaleset gebruiken voor de webserver om aanhoudende belasting aan te kunnen, max 3.
+
+
+## Project ontwerp
 
 De verschillende resources in verschillende resourcegroups deployen is best practice. 
 Uiteindelijk langere modules geschreven, waardoor onderverdelen in de resourcegroups zoals in eerste instantie gewenst was niet gelukt is. 
@@ -97,6 +108,14 @@ Activeerd peering tussen de webserver en de adminserver.
 #### Storage/deploymentscript
 Genereerd storageaccount, blobservice, container, activeerd deploymentscript en plaatst deze in container.  
 
+* Deploymentscript
+* Storageaccount
+* Blobservice
+* Container
+
 #### Backup 
 Genereerd recoveryvault, backup policy, en stelt protected items in.
 
+* Recovereryvault
+* Backup policy 
+* Protected items

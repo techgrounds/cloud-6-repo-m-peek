@@ -8,19 +8,28 @@ param tagValues object
 @description('naming of the resources')
 param storageAccountName string = 'storacc${uniqueString(resourceGroup().id)}'
 param containerName string = 'cont${uniqueString(resourceGroup().id)}'
-//param webservScript string = 'install_apache'
+param webservScript string = 'install_apache'
 
-/* needs work
+
 resource deployWebserv 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
   name: webservScript
   location: location
+  tags: tagValues
   kind: 'AzureCLI'
   properties: {
-    azCliVersion: 
-    retentionInterval: 
+    azCliVersion: '2.34'
+    environmentVariables: [
+      
+    ]
+    retentionInterval: 'PT1H'
+    scriptContent: 
+    storageAccountSettings: {
+      storageAccountKey: keyName
+      storageAccountName: storageAccountName
+    }
   }
 }
-*/
+
 
 // create storage account
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
