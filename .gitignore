@@ -3,3 +3,7 @@
 *.doc
 *.docx
 *.gdoc
+
+# block this file from git
+/04_Project_v1.0/modules/sshkey.bicep
+/04_Project_v1.0/modules/testmodule.bicep
