@@ -21,8 +21,7 @@ De file [usage](../04_Project_v1.0/administration/5_usage.md) bevat meer informa
 De informatie over de infrastructuur is terug te vinden in de administatiemap, [desisions](../04_Project_v1.0/administration/2_decisions.md) en [design](../04_Project_v1.0/administration/3_design.md)
 
 ### Te implementeren verbeteringen 
-- parameterfile waarin ook de resourcegroupnaam automatisch aangemaakt wordt. 
+- parameterfile voor parameters.
 - veranderen van toegangsregels, bijv. ssh alleen van windowsserver
     - ssh key moet nu nog zelf aangemaakt worden, moet nog aangepast worden. 
-- aanpassing op hoe webserver geinstalleerd wordt. 
 - automatisch aanmaken van wachtwoord voor de adminserver
