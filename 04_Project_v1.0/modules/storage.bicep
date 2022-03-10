@@ -25,7 +25,7 @@ resource deployWebserv 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
         value: storageAccountName
       }
       {
-        name: 'STORAGE_KEY'
+        name: 'AZURE_STORAGE_KEY'
         secureValue: storageAccount.listKeys().keys[0].value
       }
       {
@@ -55,7 +55,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
   }
   properties: {
     accessTier: 'Hot'
-    allowBlobPublicAccess: false
+    allowBlobPublicAccess: true
     allowCrossTenantReplication: true
     allowSharedKeyAccess: true
     defaultToOAuthAuthentication: false

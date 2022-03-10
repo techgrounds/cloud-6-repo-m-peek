@@ -31,6 +31,8 @@ param webvmSize string = 'Standard_B1s'
 @description('Windows version for the VM; picks a fully patched Gen2 image of this given Windows version.')
 param OSVersion string = '21_10-gen2'
 
+var apache_script = loadFileAsBase64('../modules/webserver_script.sh') 
+
 // find out what to fill out for requirements. 
 resource webSecGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
   name: webSecurityName
@@ -230,6 +232,7 @@ resource web_VM 'Microsoft.Compute/virtualMachines@2021-11-01' = {
         osType: 'Linux'
       }
     }
+    userData: apache_script
   }
 }
 
