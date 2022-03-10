@@ -5,8 +5,12 @@ Infrastructure as Code project bicep
 To deploy the templaye at subscription scope:
 `az deployment sub create --location westeurope --template-file main.bicep`
 
-De resourcegroup en adminwachtwoord moeten na deployment command handmatig ingevoerd worden. 
+Resourcegroup krijgt de naam rg-<environmentparameter>
+De enviromentparameter staat op testv1
 
+SSH publickey moet of handmatig ingevoerd worden of in de main gedefineerd worden. Gebruiker moet zelf keypair aanmaken. 
+
+Adminwachtwoord moeten na deployment command handmatig ingevoerd worden. 
 Het adminpassword moet minimaal 8 characters hebben, een cijfer en een speciaal teken bevatten. 
 
 westeurope kan eventueel veranderd worden naar een andere Azure locatie
