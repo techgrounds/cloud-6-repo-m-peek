@@ -28,10 +28,6 @@ var vnetwebConfig = {
 @description('configurations VM')
 param webvmSize string = 'Standard_B1s'
 
-@description('password for the admin VM')
-@secure()
-param webPassword string
-
 @description('Windows version for the VM; picks a fully patched Gen2 image of this given Windows version.')
 param OSVersion string = '21_10-gen2'
 

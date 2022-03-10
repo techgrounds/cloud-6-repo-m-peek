@@ -8,28 +8,35 @@ param tagValues object
 @description('naming of the resources')
 param storageAccountName string = 'storacc${uniqueString(resourceGroup().id)}'
 param containerName string = 'cont${uniqueString(resourceGroup().id)}'
-// param webservScript string = 'install_apache'
+param apachefile string = 'webserver_script.sh'
+param utcstamp string = utcNow()
 
-/*
 resource deployWebserv 'Microsoft.Resources/deploymentScripts@2020-10-01' = {
-  name: webservScript
+  name: 'deployscript-upload-blob-${utcstamp}'
   location: location
   tags: tagValues
   kind: 'AzureCLI'
   properties: {
-    azCliVersion: '2.34'
+    azCliVersion: '2.34.1'
+    timeout: 'PT5M'
     environmentVariables: [
-      
+      {
+        name: 'AZURE_STORAGE_ACCOUNT'
+        value: storageAccountName
+      }
+      {
+        name: 'STORAGE_KEY'
+        secureValue: storageAccount.listKeys().keys[0].value
+      }
+      {
+        name: 'CONTENT'
+        value: loadFileAsBase64('../modules/webserver_script.sh')
+      }
     ]
     retentionInterval: 'PT1H'
-    scriptContent: 
-    storageAccountSettings: {
-      storageAccountKey: keyName
-      storageAccountName: storageAccountName
-    }
+    scriptContent: 'echo $CONTENT | base64 -d > ${apachefile} && az storage blob upload -f ${apachefile} -c ${containerName} -n ${apachefile}'
   }
 }
-*/
 
 // create storage account
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
