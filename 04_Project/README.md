@@ -16,9 +16,9 @@ Het adminpassword moet minimaal 8 characters hebben, een cijfer en een speciaal 
 westeurope kan eventueel veranderd worden naar een andere Azure locatie
 Wanneer er veranderingen nodig zijn; m.b.t. andere informatie (nameing; tiers; size), aanpassingen moeten nog in de modules zelf gedaan worden, dit moet nog aangepast worden naar parameterfile
 
-De file [usage](../04_Project_v1.0/administration/5_usage.md) bevat meer informatie over het gebruik van de infrastructuur. 
+De file [usage](../04_Project/administration/5_usage.md) bevat meer informatie over het gebruik van de infrastructuur. 
 
-De informatie over de infrastructuur is terug te vinden in de administatiemap, [desisions](../04_Project_v1.0/administration/2_decisions.md) en [design](../04_Project_v1.0/administration/3_design.md)
+De informatie over de infrastructuur is terug te vinden in de administatiemap, [desisions](../04_Project/administration/2_decisions.md) en [design](../04_Project/administration/3_design.md)
 
 ### Te implementeren verbeteringen 
 - parameterfile voor parameters.
