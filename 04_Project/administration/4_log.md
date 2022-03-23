@@ -219,7 +219,6 @@ Stap voor stap komen we er wel
 ## Log [08-03-22]
 
 ### Dagverslag (1 zin):
-- Voor de backup van de VM's werken de vault en de backup policies
 - Storageaccount werkt niet in één file met de keyvault.
 - Main in elkaar gezet om de infrastructuur te testen
 ### Opstakels:
@@ -233,6 +232,18 @@ Soms is de oplossing dichter bij als je denkt.
 ## Log [09-03-22]
 
 ### Dagverslag (1 zin):
+- Voor de backup van de VM's werken de vault en de backup policies
+### Opstakels:
+Benaming van de backup policies
+### Oplossingen:
+Azure documetatie
+### Learnings:
+Lezen, denken, implementeren
+
+--- 
+## Log [10-03-22]
+
+### Dagverslag (1 zin):
 - Postdeploymentscript werkend gemaakt
 - Documentatie bijgewerkt
 ### Opstakels:
@@ -243,26 +254,17 @@ Uitgeschreven wat de vereisten zijn en vanuit daar verder gewerkt.
 Planning is het halve werk
 
 --- 
-## Log [10-03-22]
-
-### Dagverslag (1 zin):
-- 
-### Opstakels:
-
-### Oplossingen:
-
-### Learnings:
-
---- 
 ## Log [11-03-22]
-- presentatie versie 1.0
+
 ### Dagverslag (1 zin):
-- 
+- Kleine aanpassingen gedaan
+- Presentaties versie 1.0
 ### Opstakels:
-
+SSH key implementatie
 ## Oplossingen:
-
+SSH key zelf aanmaken
 ## Learnings:
+First things first, get the MVP
 
 ---
 # Versie 1.1 
@@ -271,23 +273,27 @@ Planning is het halve werk
 
 ### Dagverslag (1 zin):
 - Vereisten versie 1.1 doornemen
-- Uitzoeken welke resources er nodig zijn. 
+- Uitzoeken welke resources er nodig zijn en invloed op moduleindeling. 
+- Resources deployen
 ### Opstakels:
-
+Tijd die het duurt om gateway te deployen
 ### Oplossingen:
-
+Even wat anders gaan doen
 ### Learnings:
+Pick your battles
 
 --- 
 ## Log [15-03-22]
 
 ### Dagverslag (1 zin):
-- 
+- JSON van nieuwe resources gebruikt voor nieuwe templates.
+- Ontwerp voor nieuwe infrastructuur.
 ### Opstakels:
 
 ### Oplossingen:
 
 ### Learnings:
+Don't be scared to make changes
 
 --- 
 ## Log [16-03-22]
@@ -299,6 +305,7 @@ Planning is het halve werk
 ### Oplossingen:
 
 ### Learnings:
+Be the change you want to see in the world
 
 --- 
 ## Log [17-03-22]
@@ -310,6 +317,7 @@ Planning is het halve werk
 ### Oplossingen:
 
 ### Learnings:
+
 
 --- 
 ## Log [18-03-22]

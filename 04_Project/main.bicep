@@ -4,20 +4,18 @@ Main file will call upon different modules that launch different resources.
 
 targetScope = 'subscription'
 
-param publickey string 
-
 @description('set the location of the deployment')
 param location string = deployment().location
 
 @description('parameters that need to be defined a.t.m.')
 param resourceGroupName string = 'rg-${environment}'
-param objectId string = 'de00d0e9-03c6-457c-bfff-0e295242fd26'
-
-param environment string = 'testv1'
+param objectId string 
+param environment string = 'v1.1'
 param tagValue object = {
-  project:'1.0'
+  project:'1.1'
 }
-
+@secure()
+param certPassword string = 'AzureKey234!'
 @secure()
 param adminpassword string
 
@@ -48,16 +46,30 @@ module adminserv 'modules/admin_serv.bicep' = {
   }
 }
 
-module webserv 'modules/web_serv.bicep' = {
+module webnetwork 'modules/web_network.bicep' = {
   scope: resourceGroup
-  name: 'webserv_mod'
+  name: 'webnetwork_mod'
   params: {
     location: location
-    diskEncryptionId: keyVault.outputs.diskencryptionId
     environment: environment
-    pubkey: publickey
     tagValues: tagValue
+    certPassword: certPassword
+    trustedIP: []
   }
+}
+
+module webserv 'modules/webserv.bicep' = {
+  scope: resourceGroup
+  name: 'webserver_mod'
+  params: {
+    location: location
+    environment: environment
+    tagValues: tagValue
+    diskEncryptId: keyVault.outputs.diskencryptionId
+    loadbalancerName: webnetwork.outputs.loadbalancerName
+    vNetWebName: webnetwork.outputs.webvnetName
+    webNSGid: webnetwork.outputs.webNSGid 
+  }  
 }
 
 module peering 'modules/network.bicep' = {
@@ -66,8 +78,8 @@ module peering 'modules/network.bicep' = {
   params: {
     adminvnetid: adminserv.outputs.vnetAdminiD
     adminvnetname: adminserv.outputs.adminvnetname
-    webvnetid: webserv.outputs.vnetWebId
-    webvnetname: webserv.outputs.webvnetname
+    webvnetid: webnetwork.outputs.webvnetID
+    webvnetname: webnetwork.outputs.webvnetName
   }
 }
 
@@ -91,7 +103,5 @@ module backup 'modules/backup.bicep' = {
     adminvmId: adminserv.outputs.adminservId
     adminvmName: adminserv.outputs.adminservname
     tagValues: tagValue
-    webvmId: webserv.outputs.webservId
-    webvmName: webserv.outputs.webservname
   }
 }

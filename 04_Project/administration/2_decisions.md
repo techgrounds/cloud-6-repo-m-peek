@@ -1,36 +1,12 @@
 # Beslissingsdocumentatie
 Beslissingen over o.a. de diensten die gebruikt gaan worden, overwegingen en besluiten. Assumpties en verbeteringen. 
 
-## Resourcegroups
-Overweging 
+Het project is opgebouwt in verschillende modules, die vanuit de main module aangeroepen worden. 
+Per module worden beslissingen met betrekking tot resources toegelicht.
 
-### Keyvault
-Module die keyvault
-* Resource KeyVault
-    - KeyVault rules
-* Resource accessPolicies
-* Resource Keys 
+In de documentatie [design](./3_design.md) wordt praktische en technische informatie over de resources beschreven. Ook wordt er aanvullend nog recommendations gedaan om de infrastructuur te verbeteren. 
 
-### Recoveryservice Vault
-Module die recovery
+## Main
+Vanuit de main file worden de verschillende modules aangeroepen. 
 
-### Storageaccount
-Module voor storageaccount maken
-- Disk encrypted
-
-### Virtual Machines
-De infrastructuur bevat twee VM's 
-
-WebVM:
-- Linux Ubuntu server
-- Automatische installatie webserver
-- Disk encryption
-
-AdminVM:
-- Windows VM
-- Publiek IP adress
-- Disk encryption
-
-### Recomendations
-Extra services die aangeraden worden
-- firewall op subnet niveau.
+### Keyvault module

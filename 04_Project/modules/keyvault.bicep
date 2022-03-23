@@ -1,7 +1,11 @@
+targetScope = 'resourceGroup'
+
 @description('values from main')
-param tagValue object
-param location string 
-param objectId string 
+param tagValue object = {
+  project:'v1.1'
+}
+param location string = resourceGroup().location
+param objectId string = 'de00d0e9-03c6-457c-bfff-0e295242fd26'
 
 @description('naming of the resources')
 param keyVaultName string = 'vault${uniqueString(resourceGroup().id)}'
@@ -13,7 +17,7 @@ param accesPoliciesName string = 'add'
 @description('specify userdata')
 param tenantId string = subscription().tenantId
 
-// create keyvault resource
+
 resource keyVault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
   name: keyVaultName
   location: location
@@ -97,7 +101,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2021-11-01-preview' = {
   }
 }
 
-// create key in keyvault
+
 resource keyVaultKey 'Microsoft.KeyVault/vaults/keys@2021-11-01-preview' = {
   name: keyName
   tags: tagValue
@@ -116,7 +120,7 @@ resource keyVaultKey 'Microsoft.KeyVault/vaults/keys@2021-11-01-preview' = {
   }
 }
 
-// create diskencryptionset
+
 resource diskencryptionset 'Microsoft.Compute/diskEncryptionSets@2021-08-01' = {
   name: diskEncrypName
   location: location
@@ -136,7 +140,7 @@ resource diskencryptionset 'Microsoft.Compute/diskEncryptionSets@2021-08-01' = {
   }
 }
 
-// create user assigned identity
+
 resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-11-30' = {
   name: managedIdName
   location: location
@@ -146,7 +150,7 @@ resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-
   ]
 }
 
-// create vault accesspolicies for diskencryptionset and managed identity
+
 resource accessPolicies 'Microsoft.KeyVault/vaults/accessPolicies@2021-11-01-preview' = {
   name: accesPoliciesName
   parent: keyVault
@@ -176,8 +180,28 @@ resource accessPolicies 'Microsoft.KeyVault/vaults/accessPolicies@2021-11-01-pre
             'unwrapKey'
             'wrapKey'  
           ]
-          secrets: []
-          certificates: []
+          secrets: [
+            'backup'
+            'delete'
+            'get'
+            'list'
+            'purge'
+            'recover'
+            'restore'
+            'set'
+          ]
+          certificates: [
+            'backup'
+            'create'
+            'delete'
+            'get'
+            'import'
+            'list'
+            'purge'
+            'recover'
+            'restore'
+            'update'
+          ]
         }
       }
     ] 

@@ -6,10 +6,10 @@ param diskEncryptionId string
 param environment string 
 
 @description('naming of resources')
-param adminSecurityName string = 'admin-nsg'
+param adminnsgName string = 'admin-nsg'
 param adminSecRules string = 'admin-nsg-rules'
 param adminPublicIpName string = 'publicIP1'
-param nicName string = 'adminnic'
+param adminnicName string = 'adminnic'
 param vNetAdminName string = 'admin-vnet'
 param adminvmName string = 'adminvm${environment}'
 param adminUserName string = 'adminuser-${environment}'
@@ -32,8 +32,8 @@ param OSVersion string = '2022-datacenter-azure-edition'
 
 
 // works, add ssh rule
-resource adminSecGroup 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
-  name: adminSecurityName
+resource adminNSG 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
+  name: adminnsgName
   location: location
   tags: tagValues
   properties: {
@@ -91,7 +91,7 @@ resource vnetadmin 'Microsoft.Network/virtualNetworks@2021-05-01' = {
         properties: {
           addressPrefix: vnetadminConfig.subnetPrefix
           networkSecurityGroup: {
-            id: adminSecGroup.id
+            id: adminNSG.id
           }
         }
       }
@@ -101,7 +101,7 @@ resource vnetadmin 'Microsoft.Network/virtualNetworks@2021-05-01' = {
 
 // requiredproperties filled out
 resource adminNIC 'Microsoft.Network/networkInterfaces@2021-05-01' = {
-  name: nicName
+  name: adminnicName
   location: location
   tags: tagValues
   properties: {
@@ -109,7 +109,7 @@ resource adminNIC 'Microsoft.Network/networkInterfaces@2021-05-01' = {
     enableIPForwarding: false
     ipConfigurations: [
       {
-        name: 'AdminIpConvig'
+        name: 'AdminIpConfig'
         properties: {
           privateIPAllocationMethod: 'Dynamic'
           publicIPAddress: {

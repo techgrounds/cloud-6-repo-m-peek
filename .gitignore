@@ -5,5 +5,5 @@
 *.gdoc
 
 # block this file from git
-/04_Project_v1.0/modules/sshkey.bicep
-/04_Project_v1.0/modules/testmodule.bicep
+/04_Project/modules/secrets
+/04_Project/modules/test.bicep
