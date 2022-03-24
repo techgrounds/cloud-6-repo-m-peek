@@ -15,7 +15,7 @@ param tagValue object = {
   project:'1.1'
 }
 @secure()
-param certPassword string = 'AzureKey234!'
+param certPassword string
 @secure()
 param adminpassword string
 
@@ -95,13 +95,3 @@ module storage 'modules/storage.bicep' = {
   }
 }
 
-module backup 'modules/backup.bicep' = {
-  scope: resourceGroup
-  name: 'backup_mod'
-  params: {
-    location: location
-    adminvmId: adminserv.outputs.adminservId
-    adminvmName: adminserv.outputs.adminservname
-    tagValues: tagValue
-  }
-}

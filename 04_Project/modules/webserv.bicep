@@ -8,7 +8,7 @@ param vNetWebName string
 param tagValues object
 
 @description('configurations VM')
-param webscaleName string = 'webscale${environment}'
+param webscaleName string = 'webscaleset'
 param webUserName string = 'webuser-${environment}'
 param OSversion string = '20_04-lts-gen2'
 param webnicName string = 'webnic'

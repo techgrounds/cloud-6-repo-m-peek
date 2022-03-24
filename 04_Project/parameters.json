@@ -10,6 +10,12 @@
         },
         "environment": {
             "value": "v1.1"
+        },
+        "objectId": {
+            "value": "replace"
+        },
+        "certPassword": {
+            "value": "AzureKey234!"
         }
     }
 }

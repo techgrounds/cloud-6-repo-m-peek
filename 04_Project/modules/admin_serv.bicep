@@ -11,7 +11,7 @@ param adminSecRules string = 'admin-nsg-rules'
 param adminPublicIpName string = 'publicIP1'
 param adminnicName string = 'adminnic'
 param vNetAdminName string = 'admin-vnet'
-param adminvmName string = 'adminvm${environment}'
+param adminvmName string = 'adminvm'
 param adminUserName string = 'adminuser-${environment}'
 
 @description('vnet configurations')
