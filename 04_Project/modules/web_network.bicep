@@ -8,14 +8,14 @@ param certPassword string
 
 @description('naming of the resources')
 param publicIpName string = 'publicIP2'
+param publicIpbackendName string = 'backendIP' 
 param webnsgName string = 'webnsg-${environment}'
 param vNetWebName string = 'web-vnet'
+param webnatgateName string = 'web-natgate'
 param loadbalancerName string = 'webGateway${environment}'
 
 @description('load info from file')
 param certdata string = loadFileAsBase64('../modules/secrets/certificate.p12')
-
-
 
 @description('vnet configurations')
 var vnetwebConfig = {
@@ -41,6 +41,23 @@ resource publicIPweb 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
     publicIPAllocationMethod: 'Static' 
   }
 }
+
+resource publicIPbackend 'Microsoft.Network/publicIPAddresses@2021-05-01' = {
+  name: publicIpbackendName
+  location: location
+  tags: tagValues
+  sku: {
+    name: 'Standard'
+    tier: 'Regional'
+  }
+  properties: {
+    idleTimeoutInMinutes: 4
+    ipTags: []
+    publicIPAddressVersion: 'IPv4'
+    publicIPAllocationMethod: 'Static' 
+  }
+}
+
 
 
 resource webNSG 'Microsoft.Network/networkSecurityGroups@2021-05-01' = {
@@ -132,6 +149,9 @@ resource vnetweb 'Microsoft.Network/virtualNetworks@2021-05-01' = {
         name: vnetwebConfig.subnetName2
         properties: {
           addressPrefix: vnetwebConfig.subnetPrefix2
+          natGateway: {
+            id: webnatgate.id
+          }
           privateEndpointNetworkPolicies: 'Enabled'
           privateLinkServiceNetworkPolicies: 'Enabled'
         }
@@ -140,6 +160,22 @@ resource vnetweb 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   }
 }
 
+
+resource webnatgate 'Microsoft.Network/natGateways@2021-05-01' = {
+  name: webnatgateName
+  location: location
+  sku: {
+    name: 'Standard'
+  }
+  properties: {
+    idleTimeoutInMinutes: 4
+    publicIpAddresses: [
+      {
+        id: publicIPbackend.id
+      }
+    ]
+  }
+}
 
 resource loadbalancer 'Microsoft.Network/applicationGateways@2021-05-01' = {
   name: loadbalancerName

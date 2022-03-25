@@ -6,7 +6,7 @@
             "value": "westeurope"
         },
         "resourcegroupname": {
-            "value": "rg-project"
+            "value": "rg-projectv1.1"
         },
         "environment": {
             "value": "v1.1"
